@@ -1,0 +1,466 @@
+#2026 05 08 10:36:24.955#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-4575#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:35:46.536681] Added process: "web" (STDOUT, API)#
+#2026 05 08 10:36:24.955#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-4575#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:35:46.542931] Created app with guid 7848e865-04ec-4563-a264-3eca4d44b55c (STDOUT, API)#
+#2026 05 08 10:36:24.955#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-4575#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:35:46.628549] Updating process: "web" (STDOUT, API)#
+#2026 05 08 10:36:24.955#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-4575#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:35:46.686960] Scaling process: "web" (STDOUT, API)#
+#2026 05 08 10:36:24.955#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-4575#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:05.890618] Uploading app package for app with guid 7848e865-04ec-4563-a264-3eca4d44b55c (STDOUT, API)#
+#2026 05 08 10:36:24.955#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-4575#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:06.088879] Updated app with guid 7848e865-04ec-4563-a264-3eca4d44b55c ({"environment_variables"=>"[PRIVATE DATA HIDDEN]"}) (STDOUT, API)#
+#2026 05 08 10:36:24.955#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-4575#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:15.179749] Creating build for app with guid 7848e865-04ec-4563-a264-3eca4d44b55c (STDOUT, API)#
+#2026 05 08 10:36:24.955#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-4575#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:15.504527] Downloading nodejs_buildpack... (STDOUT, STG)#
+#2026 05 08 10:36:24.955#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-4575#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:15.558816] Downloaded nodejs_buildpack (STDOUT, STG)#
+#2026 05 08 10:36:24.955#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-4575#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:15.558903] Cell 684caff8-89cd-492b-be01-b3d0835f1763 creating container for instance 3f88da08-7ebd-4a19-997a-d54b59337826 (STDOUT, STG)#
+#2026 05 08 10:36:24.955#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-4575#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:16.522177] Security group rules were updated (STDOUT, STG)#
+#2026 05 08 10:36:24.955#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-4575#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:16.637741] Cell 684caff8-89cd-492b-be01-b3d0835f1763 successfully created container for instance 3f88da08-7ebd-4a19-997a-d54b59337826 (STDOUT, STG)#
+#2026 05 08 10:36:24.955#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-4575#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:17.424095] Downloading app package... (STDOUT, STG)#
+#2026 05 08 10:36:24.955#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-4575#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:20.737314] Downloaded app package (62M) (STDOUT, STG)#
+#2026 05 08 10:36:24.955#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-4575#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:20.873191] -----> Nodejs Buildpack version 1.8.44 (STDOUT, STG)#
+#2026 05 08 10:36:24.955#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-4575#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:21.361224] -----> Bootstrapping python (STDOUT, STG)#
+#2026 05 08 10:36:24.955#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-4575#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:21.361251] -----> Installing python 3.11.14 (STDOUT, STG)#
+#2026 05 08 10:36:24.955#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-4575#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:21.361307] Copy [/tmp/buildpacks/978cee5ec9c58000/dependencies/b5e0345ae0ae1932e7d56fffaa49a487/python_3.11.14_linux_x64_cflinuxfs4_66f53248.tgz] (STDOUT, STG)#
+#2026 05 08 10:36:35.045#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:26.266538] -----> Installing binaries (STDOUT, STG)#
+#2026 05 08 10:36:35.045#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:26.266899] engines.node (package.json): unspecified (STDOUT, STG)#
+#2026 05 08 10:36:35.045#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:26.267044] engines.npm (package.json): unspecified (use default) (STDOUT, STG)#
+#2026 05 08 10:36:35.045#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:26.267157] [31;1m**WARNING**[0m Node version not specified in package.json or .nvmrc. See: http://docs.cloudfoundry.org/buildpacks/node/node-tips.html (STDOUT, STG)#
+#2026 05 08 10:36:35.045#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:26.267266] -----> Installing node 22.22.0 (STDOUT, STG)#
+#2026 05 08 10:36:35.045#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:26.267622] Copy [/tmp/buildpacks/978cee5ec9c58000/dependencies/65c50d3a8311e7796847437aebc5aebd/node_22.22.0_linux_x64_cflinuxfs4_a73ffe6d.tgz] (STDOUT, STG)#
+#2026 05 08 10:36:35.045#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:28.974487] Using default npm version: 10.9.4 (STDOUT, STG)#
+#2026 05 08 10:36:35.045#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:28.974522] -----> Installing yarn 1.22.22 (STDOUT, STG)#
+#2026 05 08 10:36:35.045#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:28.974593] Copy [/tmp/buildpacks/978cee5ec9c58000/dependencies/e3a39aedd1236924d69cc2d0637a8ed2/yarn_1.22.22_linux_noarch_any-stack_4911d0a6.tgz] (STDOUT, STG)#
+#2026 05 08 10:36:35.045#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:29.340702] Installed yarn 1.22.22 (STDOUT, STG)#
+#2026 05 08 10:36:35.045#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:29.340821] -----> Creating runtime environment (STDOUT, STG)#
+#2026 05 08 10:36:35.045#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:29.342497] NODE_ENV=production (STDOUT, STG)#
+#2026 05 08 10:36:35.045#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:29.342564] NODE_HOME=/tmp/contents2465308926/deps/0/node (STDOUT, STG)#
+#2026 05 08 10:36:35.045#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:29.342568] NODE_MODULES_CACHE=true (STDOUT, STG)#
+#2026 05 08 10:36:35.045#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:29.342609] NODE_VERBOSE=false (STDOUT, STG)#
+#2026 05 08 10:36:35.045#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:29.342612] NPM_CONFIG_LOGLEVEL=error (STDOUT, STG)#
+#2026 05 08 10:36:35.045#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:29.343397] NPM_CONFIG_PRODUCTION=true (STDOUT, STG)#
+#2026 05 08 10:36:35.045#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:29.343506] -----> Building dependencies (STDOUT, STG)#
+#2026 05 08 10:36:35.045#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:29.343550] Prebuild detected (node_modules already exists) (STDOUT, STG)#
+#2026 05 08 10:36:35.045#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:29.343586] Rebuilding any native modules (STDOUT, STG)#
+#2026 05 08 10:36:35.045#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:30.157642] rebuilt dependencies successfully (STDOUT, STG)#
+#2026 05 08 10:36:35.045#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:30.158963] npm notice (STDOUT, STG)#
+#2026 05 08 10:36:35.045#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:30.158985] npm notice New major version of npm available! 10.9.4 -> 11.14.0 (STDOUT, STG)#
+#2026 05 08 10:36:35.045#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:30.158990] npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.14.0 (STDOUT, STG)#
+#2026 05 08 10:36:35.045#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:30.158993] npm notice To update run: npm install -g npm@11.14.0 (STDOUT, STG)#
+#2026 05 08 10:36:35.045#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:30.158995] npm notice (STDOUT, STG)#
+#2026 05 08 10:36:35.045#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:30.237044] Installing any new modules (package.json + package-lock.json) (STDOUT, STG)#
+#2026 05 08 10:36:35.046#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:30.777129] up to date in 461ms (STDOUT, STG)#
+#2026 05 08 10:36:35.046#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:31.764683] [31;1m**WARNING**[0m This app may not specify any way to start a node process (STDOUT, STG)#
+#2026 05 08 10:36:35.046#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:31.764711] See: https://docs.cloudfoundry.org/buildpacks/node/node-tips.html#start (STDOUT, STG)#
+#2026 05 08 10:36:35.046#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6907#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:31.800498] Contrast Security no credentials found. Will not write environment files. (STDOUT, STG)#
+#2026 05 08 10:36:55.101#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6923#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:50.701193] Exit status 0 (STDOUT, STG)#
+#2026 05 08 10:36:55.101#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6923#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:50.701259] Uploading droplet, build artifacts cache... (STDOUT, STG)#
+#2026 05 08 10:36:55.101#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6923#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:50.701309] Uploading build artifacts cache... (STDOUT, STG)#
+#2026 05 08 10:36:55.101#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6923#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:50.701342] Uploading droplet... (STDOUT, STG)#
+#2026 05 08 10:36:55.101#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6923#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:50.733129] Uploaded build artifacts cache (219B) (STDOUT, STG)#
+#2026 05 08 10:36:55.101#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6923#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:52.075157] Creating droplet for app with guid 7848e865-04ec-4563-a264-3eca4d44b55c (STDOUT, API)#
+#2026 05 08 10:36:55.101#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6923#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:54.184582] Uploaded droplet (117.5M) (STDOUT, STG)#
+#2026 05 08 10:36:55.101#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6923#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:54.243735] Uploading complete (STDOUT, STG)#
+#2026 05 08 10:37:05.173#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6930#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:54.960455] Cell 684caff8-89cd-492b-be01-b3d0835f1763 stopping instance 3f88da08-7ebd-4a19-997a-d54b59337826 (STDOUT, STG)#
+#2026 05 08 10:37:05.173#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6930#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:54.960496] Cell 684caff8-89cd-492b-be01-b3d0835f1763 destroying container for instance 3f88da08-7ebd-4a19-997a-d54b59337826 (STDOUT, STG)#
+#2026 05 08 10:37:05.173#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6930#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:55.006570] Staging complete for build 3f88da08-7ebd-4a19-997a-d54b59337826 (STDOUT, API)#
+#2026 05 08 10:37:05.173#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6930#
+[PollStageAppStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:59.383313] Cell 684caff8-89cd-492b-be01-b3d0835f1763 successfully destroyed container for instance 3f88da08-7ebd-4a19-997a-d54b59337826 (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:35:46.536681] Added process: "web" (STDOUT, API)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:35:46.542931] Created app with guid 7848e865-04ec-4563-a264-3eca4d44b55c (STDOUT, API)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:35:46.628549] Updating process: "web" (STDOUT, API)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:35:46.686960] Scaling process: "web" (STDOUT, API)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:05.890618] Uploading app package for app with guid 7848e865-04ec-4563-a264-3eca4d44b55c (STDOUT, API)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:06.088879] Updated app with guid 7848e865-04ec-4563-a264-3eca4d44b55c ({"environment_variables"=>"[PRIVATE DATA HIDDEN]"}) (STDOUT, API)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:15.179749] Creating build for app with guid 7848e865-04ec-4563-a264-3eca4d44b55c (STDOUT, API)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:15.504527] Downloading nodejs_buildpack... (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:15.558816] Downloaded nodejs_buildpack (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:15.558903] Cell 684caff8-89cd-492b-be01-b3d0835f1763 creating container for instance 3f88da08-7ebd-4a19-997a-d54b59337826 (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:16.522177] Security group rules were updated (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:16.637741] Cell 684caff8-89cd-492b-be01-b3d0835f1763 successfully created container for instance 3f88da08-7ebd-4a19-997a-d54b59337826 (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:17.424095] Downloading app package... (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:20.737314] Downloaded app package (62M) (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:20.873191] -----> Nodejs Buildpack version 1.8.44 (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:21.361224] -----> Bootstrapping python (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:21.361251] -----> Installing python 3.11.14 (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:21.361307] Copy [/tmp/buildpacks/978cee5ec9c58000/dependencies/b5e0345ae0ae1932e7d56fffaa49a487/python_3.11.14_linux_x64_cflinuxfs4_66f53248.tgz] (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:26.266538] -----> Installing binaries (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:26.266899] engines.node (package.json): unspecified (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:26.267044] engines.npm (package.json): unspecified (use default) (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:26.267157] [31;1m**WARNING**[0m Node version not specified in package.json or .nvmrc. See: http://docs.cloudfoundry.org/buildpacks/node/node-tips.html (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:26.267266] -----> Installing node 22.22.0 (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:26.267622] Copy [/tmp/buildpacks/978cee5ec9c58000/dependencies/65c50d3a8311e7796847437aebc5aebd/node_22.22.0_linux_x64_cflinuxfs4_a73ffe6d.tgz] (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:28.974487] Using default npm version: 10.9.4 (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:28.974522] -----> Installing yarn 1.22.22 (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:28.974593] Copy [/tmp/buildpacks/978cee5ec9c58000/dependencies/e3a39aedd1236924d69cc2d0637a8ed2/yarn_1.22.22_linux_noarch_any-stack_4911d0a6.tgz] (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:29.340702] Installed yarn 1.22.22 (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:29.340821] -----> Creating runtime environment (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:29.342497] NODE_ENV=production (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:29.342564] NODE_HOME=/tmp/contents2465308926/deps/0/node (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:29.342568] NODE_MODULES_CACHE=true (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:29.342609] NODE_VERBOSE=false (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:29.342612] NPM_CONFIG_LOGLEVEL=error (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:29.343397] NPM_CONFIG_PRODUCTION=true (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:29.343506] -----> Building dependencies (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:29.343550] Prebuild detected (node_modules already exists) (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:29.343586] Rebuilding any native modules (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:30.157642] rebuilt dependencies successfully (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:30.158963] npm notice (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:30.158985] npm notice New major version of npm available! 10.9.4 -> 11.14.0 (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:30.158990] npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.14.0 (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:30.158993] npm notice To update run: npm install -g npm@11.14.0 (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:30.158995] npm notice (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:30.237044] Installing any new modules (package.json + package-lock.json) (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:30.777129] up to date in 461ms (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:31.764683] [31;1m**WARNING**[0m This app may not specify any way to start a node process (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:31.764711] See: https://docs.cloudfoundry.org/buildpacks/node/node-tips.html#start (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:31.800498] Contrast Security no credentials found. Will not write environment files. (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:50.701193] Exit status 0 (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:50.701259] Uploading droplet, build artifacts cache... (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:50.701309] Uploading build artifacts cache... (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:50.701342] Uploading droplet... (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:50.733129] Uploaded build artifacts cache (219B) (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:52.075157] Creating droplet for app with guid 7848e865-04ec-4563-a264-3eca4d44b55c (STDOUT, API)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:54.184582] Uploaded droplet (117.5M) (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:54.243735] Uploading complete (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:54.960455] Cell 684caff8-89cd-492b-be01-b3d0835f1763 stopping instance 3f88da08-7ebd-4a19-997a-d54b59337826 (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:54.960496] Cell 684caff8-89cd-492b-be01-b3d0835f1763 destroying container for instance 3f88da08-7ebd-4a19-997a-d54b59337826 (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:55.006570] Staging complete for build 3f88da08-7ebd-4a19-997a-d54b59337826 (STDOUT, API)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:36:59.383313] Cell 684caff8-89cd-492b-be01-b3d0835f1763 successfully destroyed container for instance 3f88da08-7ebd-4a19-997a-d54b59337826 (STDOUT, STG)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:05.239928] Updated app with guid 7848e865-04ec-4563-a264-3eca4d44b55c ({:droplet_guid=>"46c80470-17ff-43b6-a134-71d772b2d054"}) (STDOUT, API)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:05.701816] Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 creating container for instance 9248c1a8-adc4-4504-9a59-27332f682186 (STDOUT, CELL)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:07.099408] Security group rules were updated (STDOUT, CELL)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:07.209855] Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 successfully created container for instance 9248c1a8-adc4-4504-9a59-27332f682186 (STDOUT, CELL)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:14.203706] Invoking pre-start scripts. (STDOUT, APP/TASK/deploy)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:14.414450] Invoking start command. (STDOUT, APP/TASK/deploy)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:14.918924] npm error Missing script: "start" (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:14.918954] npm error (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:14.918958] npm error Did you mean one of these? (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:14.918961] npm error   npm star # Mark your favorite packages (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:14.919006] npm error   npm stars # View packages marked as favorites (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:14.919010] npm error (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:14.919012] npm error To see a list of scripts, run: (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:14.919014] npm error   npm run (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:14.920836] npm error A complete log of this run can be found in: /home/vcap/app/.npm/_logs/2026-05-08T10_37_14_510Z-debug-0.log (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:15.457#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5092#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:14.998945] Exit status 1 (STDOUT, APP/TASK/deploy)#
+#2026 05 08 10:37:25.418#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6942#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:16.659153] Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 stopping instance 9248c1a8-adc4-4504-9a59-27332f682186 (STDOUT, CELL)#
+#2026 05 08 10:37:25.418#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6942#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:16.659197] Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 destroying container for instance 9248c1a8-adc4-4504-9a59-27332f682186 (STDOUT, CELL)#
+#2026 05 08 10:37:25.418#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6942#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:20.145721] Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 successfully destroyed container for instance 9248c1a8-adc4-4504-9a59-27332f682186 (STDOUT, CELL)#
+#2026 05 08 10:37:35.532#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6951#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:16.659153] Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 stopping instance 9248c1a8-adc4-4504-9a59-27332f682186 (STDOUT, CELL)#
+#2026 05 08 10:37:35.532#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6951#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:16.659197] Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 destroying container for instance 9248c1a8-adc4-4504-9a59-27332f682186 (STDOUT, CELL)#
+#2026 05 08 10:37:35.532#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6951#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:20.145721] Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 successfully destroyed container for instance 9248c1a8-adc4-4504-9a59-27332f682186 (STDOUT, CELL)#
+#2026 05 08 10:37:35.532#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6951#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:28.344282] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 creating container for instance 39e9b865-4aa5-488b-948f-9a03466c4cf3 (STDOUT, CELL)#
+#2026 05 08 10:37:35.532#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6951#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:28.747818] Security group rules were updated (STDOUT, CELL)#
+#2026 05 08 10:37:35.532#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6951#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:28.806956] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 successfully created container for instance 39e9b865-4aa5-488b-948f-9a03466c4cf3 (STDOUT, CELL)#
+#2026 05 08 10:37:35.532#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6951#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:33.704367] Invoking pre-start scripts. (STDOUT, APP/TASK/deploy)#
+#2026 05 08 10:37:35.532#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6951#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:33.849835] Invoking start command. (STDOUT, APP/TASK/deploy)#
+#2026 05 08 10:37:35.532#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6951#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:34.169515] npm error Missing script: "start" (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:35.532#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6951#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:34.169536] npm error (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:35.532#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6951#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:34.169539] npm error Did you mean one of these? (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:35.532#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6951#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:34.169545] npm error   npm star # Mark your favorite packages (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:35.532#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6951#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:34.169548] npm error   npm stars # View packages marked as favorites (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:35.532#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6951#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:34.169550] npm error (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:35.532#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6951#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:34.169552] npm error To see a list of scripts, run: (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:35.532#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6951#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:34.169557] npm error   npm run (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:35.532#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6951#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:34.170675] npm error A complete log of this run can be found in: /home/vcap/app/.npm/_logs/2026-05-08T10_37_33_918Z-debug-0.log (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:35.532#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6951#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:34.224288] Exit status 1 (STDOUT, APP/TASK/deploy)#
+#2026 05 08 10:37:35.532#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6951#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:34.924975] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 stopping instance 39e9b865-4aa5-488b-948f-9a03466c4cf3 (STDOUT, CELL)#
+#2026 05 08 10:37:35.532#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6951#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:34.925004] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 destroying container for instance 39e9b865-4aa5-488b-948f-9a03466c4cf3 (STDOUT, CELL)#
+#2026 05 08 10:37:45.600#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6949#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:16.659153] Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 stopping instance 9248c1a8-adc4-4504-9a59-27332f682186 (STDOUT, CELL)#
+#2026 05 08 10:37:45.600#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6949#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:16.659197] Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 destroying container for instance 9248c1a8-adc4-4504-9a59-27332f682186 (STDOUT, CELL)#
+#2026 05 08 10:37:45.600#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6949#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:20.145721] Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 successfully destroyed container for instance 9248c1a8-adc4-4504-9a59-27332f682186 (STDOUT, CELL)#
+#2026 05 08 10:37:45.600#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6949#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:28.344282] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 creating container for instance 39e9b865-4aa5-488b-948f-9a03466c4cf3 (STDOUT, CELL)#
+#2026 05 08 10:37:45.600#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6949#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:28.747818] Security group rules were updated (STDOUT, CELL)#
+#2026 05 08 10:37:45.600#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6949#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:28.806956] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 successfully created container for instance 39e9b865-4aa5-488b-948f-9a03466c4cf3 (STDOUT, CELL)#
+#2026 05 08 10:37:45.600#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6949#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:33.704367] Invoking pre-start scripts. (STDOUT, APP/TASK/deploy)#
+#2026 05 08 10:37:45.600#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6949#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:33.849835] Invoking start command. (STDOUT, APP/TASK/deploy)#
+#2026 05 08 10:37:45.600#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6949#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:34.169515] npm error Missing script: "start" (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:45.600#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6949#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:34.169536] npm error (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:45.600#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6949#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:34.169539] npm error Did you mean one of these? (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:45.600#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6949#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:34.169545] npm error   npm star # Mark your favorite packages (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:45.600#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6949#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:34.169548] npm error   npm stars # View packages marked as favorites (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:45.600#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6949#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:34.169550] npm error (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:45.600#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6949#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:34.169552] npm error To see a list of scripts, run: (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:45.600#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6949#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:34.169557] npm error   npm run (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:45.600#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6949#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:34.170675] npm error A complete log of this run can be found in: /home/vcap/app/.npm/_logs/2026-05-08T10_37_33_918Z-debug-0.log (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:45.600#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6949#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:34.224288] Exit status 1 (STDOUT, APP/TASK/deploy)#
+#2026 05 08 10:37:45.600#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6949#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:34.924975] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 stopping instance 39e9b865-4aa5-488b-948f-9a03466c4cf3 (STDOUT, CELL)#
+#2026 05 08 10:37:45.600#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6949#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:34.925004] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 destroying container for instance 39e9b865-4aa5-488b-948f-9a03466c4cf3 (STDOUT, CELL)#
+#2026 05 08 10:37:45.600#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6949#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:36.843570] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 successfully destroyed container for instance 39e9b865-4aa5-488b-948f-9a03466c4cf3 (STDOUT, CELL)#
+#2026 05 08 10:37:45.600#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6949#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:37.615710] Cell 684caff8-89cd-492b-be01-b3d0835f1763 creating container for instance 16a6370b-fc4e-40d1-b860-ab3c97dcd1c4 (STDOUT, CELL)#
+#2026 05 08 10:37:45.600#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6949#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:38.602418] Security group rules were updated (STDOUT, CELL)#
+#2026 05 08 10:37:45.600#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6949#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:38.709126] Cell 684caff8-89cd-492b-be01-b3d0835f1763 successfully created container for instance 16a6370b-fc4e-40d1-b860-ab3c97dcd1c4 (STDOUT, CELL)#
+#2026 05 08 10:37:55.665#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5124#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:45.701442] Invoking pre-start scripts. (STDOUT, APP/TASK/deploy)#
+#2026 05 08 10:37:55.665#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5124#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:45.912691] Invoking start command. (STDOUT, APP/TASK/deploy)#
+#2026 05 08 10:37:55.665#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5124#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:46.389943] npm error Missing script: "start" (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:55.665#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5124#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:46.389976] npm error (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:55.665#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5124#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:46.389980] npm error Did you mean one of these? (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:55.665#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5124#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:46.389983] npm error   npm star # Mark your favorite packages (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:55.665#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5124#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:46.389986] npm error   npm stars # View packages marked as favorites (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:55.665#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5124#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:46.389988] npm error (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:55.665#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5124#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:46.389990] npm error To see a list of scripts, run: (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:55.665#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5124#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:46.389998] npm error   npm run (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:55.665#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5124#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:46.392307] npm error A complete log of this run can be found in: /home/vcap/app/.npm/_logs/2026-05-08T10_37_46_008Z-debug-0.log (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:37:55.665#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5124#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:46.466932] Exit status 1 (STDOUT, APP/TASK/deploy)#
+#2026 05 08 10:37:55.665#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5124#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:47.100166] Cell 684caff8-89cd-492b-be01-b3d0835f1763 stopping instance 16a6370b-fc4e-40d1-b860-ab3c97dcd1c4 (STDOUT, CELL)#
+#2026 05 08 10:37:55.665#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5124#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:47.100203] Cell 684caff8-89cd-492b-be01-b3d0835f1763 destroying container for instance 16a6370b-fc4e-40d1-b860-ab3c97dcd1c4 (STDOUT, CELL)#
+#2026 05 08 10:37:55.665#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-5124#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:50.246385] Cell 684caff8-89cd-492b-be01-b3d0835f1763 successfully destroyed container for instance 16a6370b-fc4e-40d1-b860-ab3c97dcd1c4 (STDOUT, CELL)#
+#2026 05 08 10:38:05.661#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6971#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:45.701442] Invoking pre-start scripts. (STDOUT, APP/TASK/deploy)#
+#2026 05 08 10:38:05.661#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6971#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:45.912691] Invoking start command. (STDOUT, APP/TASK/deploy)#
+#2026 05 08 10:38:05.661#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6971#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:46.389943] npm error Missing script: "start" (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:38:05.661#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6971#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:46.389976] npm error (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:38:05.661#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6971#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:46.389980] npm error Did you mean one of these? (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:38:05.661#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6971#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:46.389983] npm error   npm star # Mark your favorite packages (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:38:05.661#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6971#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:46.389986] npm error   npm stars # View packages marked as favorites (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:38:05.661#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6971#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:46.389988] npm error (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:38:05.661#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6971#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:46.389990] npm error To see a list of scripts, run: (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:38:05.661#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6971#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:46.389998] npm error   npm run (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:38:05.661#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6971#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:46.392307] npm error A complete log of this run can be found in: /home/vcap/app/.npm/_logs/2026-05-08T10_37_46_008Z-debug-0.log (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:38:05.661#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6971#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:46.466932] Exit status 1 (STDOUT, APP/TASK/deploy)#
+#2026 05 08 10:38:05.661#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6971#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:47.100166] Cell 684caff8-89cd-492b-be01-b3d0835f1763 stopping instance 16a6370b-fc4e-40d1-b860-ab3c97dcd1c4 (STDOUT, CELL)#
+#2026 05 08 10:38:05.661#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6971#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:47.100203] Cell 684caff8-89cd-492b-be01-b3d0835f1763 destroying container for instance 16a6370b-fc4e-40d1-b860-ab3c97dcd1c4 (STDOUT, CELL)#
+#2026 05 08 10:38:05.661#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6971#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:50.246385] Cell 684caff8-89cd-492b-be01-b3d0835f1763 successfully destroyed container for instance 16a6370b-fc4e-40d1-b860-ab3c97dcd1c4 (STDOUT, CELL)#
+#2026 05 08 10:38:05.661#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6971#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:59.039315] Cell c839c7b1-088e-41af-b9b7-66256aacd457 creating container for instance 5c1f9b2d-6406-49a0-95ae-ea14c8b3d10d (STDOUT, CELL)#
+#2026 05 08 10:38:05.661#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6971#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:37:59.902667] Security group rules were updated (STDOUT, CELL)#
+#2026 05 08 10:38:05.661#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6971#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:38:00.014773] Cell c839c7b1-088e-41af-b9b7-66256aacd457 successfully created container for instance 5c1f9b2d-6406-49a0-95ae-ea14c8b3d10d (STDOUT, CELL)#
+#2026 05 08 10:38:15.770#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6981#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:38:07.037813] Invoking pre-start scripts. (STDOUT, APP/TASK/deploy)#
+#2026 05 08 10:38:15.770#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6981#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:38:07.252667] Invoking start command. (STDOUT, APP/TASK/deploy)#
+#2026 05 08 10:38:15.770#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6981#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:38:07.757529] npm error Missing script: "start" (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:38:15.770#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6981#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:38:07.757552] npm error (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:38:15.770#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6981#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:38:07.757555] npm error Did you mean one of these? (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:38:15.770#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6981#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:38:07.757559] npm error   npm star # Mark your favorite packages (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:38:15.770#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6981#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:38:07.757565] npm error   npm stars # View packages marked as favorites (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:38:15.770#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6981#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:38:07.757568] npm error (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:38:15.770#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6981#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:38:07.757571] npm error To see a list of scripts, run: (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:38:15.770#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6981#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:38:07.757574] npm error   npm run (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:38:15.770#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6981#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:38:07.758687] npm error A complete log of this run can be found in: /home/vcap/app/.npm/_logs/2026-05-08T10_38_07_356Z-debug-0.log (STDERR, APP/TASK/deploy)#
+#2026 05 08 10:38:15.770#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6981#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:38:07.831207] Exit status 1 (STDOUT, APP/TASK/deploy)#
+#2026 05 08 10:38:15.770#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6981#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:38:08.424979] Cell c839c7b1-088e-41af-b9b7-66256aacd457 stopping instance 5c1f9b2d-6406-49a0-95ae-ea14c8b3d10d (STDOUT, CELL)#
+#2026 05 08 10:38:15.770#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6981#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:38:08.425020] Cell c839c7b1-088e-41af-b9b7-66256aacd457 destroying container for instance 5c1f9b2d-6406-49a0-95ae-ea14c8b3d10d (STDOUT, CELL)#
+#2026 05 08 10:38:15.770#Z#DEBUG#9affe7b6-4ac9-11f1-8e79-eeee0a981393.admin-config-db-deployer#flowable-async-job-executor-thread-6981#
+[PollExecuteTaskStatusExecution] 7848e865-04ec-4563-a264-3eca4d44b55c [2026-05-08T10:38:11.539338] Cell c839c7b1-088e-41af-b9b7-66256aacd457 successfully destroyed container for instance 5c1f9b2d-6406-49a0-95ae-ea14c8b3d10d (STDOUT, CELL)#

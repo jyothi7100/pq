@@ -1,0 +1,9 @@
+{
+  "name": "admin-config-db",
+  "version": "1.0.0",
+  "description": "Database artifacts for admin config CAP project",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@sap/hdi-deploy": "^4"
+  }
+}

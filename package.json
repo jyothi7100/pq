@@ -1,0 +1,56 @@
+{
+  "name": "admin-config",
+  "version": "1.0.0",
+  "dependencies": {
+    "@cap-js/hana": "^2",
+    "@sap/cds": "^9",
+    "@sap/xssec": "^4",
+    "csv-parse": "^6.2.1",
+    "nodemailer": "^8.0.10"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^2",
+    "@sap/cds-dk": "^9",
+    "cds-plugin-ui5": "^0.13.0",
+    "mbt": "^1.2.29",
+    "rimraf": "^5.0.5"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-config": "cds watch --open config/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "undeploy": "cf undeploy admin-config --delete-services --delete-service-keys --delete-service-brokers",
+    "build": "rimraf resources mta_archives && mbt build --mtar archive",
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
+  },
+  "cds": {
+    "fiori": {
+      "preview": true
+    },
+    "server": {
+      "index": true
+    },
+    "build": {
+      "tasks": [
+        {
+          "for": "hana",
+          "dest": "../db"
+        },
+        {
+          "for": "nodejs"
+        }
+      ]
+    },
+    "requires": {
+      "db": {
+        "kind": "hana-cloud"
+      },
+      "[production]": {
+        "auth": "xsuaa"
+      }
+    }
+  },
+  "private": true,
+  "workspaces": [
+    "app/*"
+  ]
+}
