@@ -5,5 +5,8 @@
   "license": "UNLICENSED",
   "dependencies": {
     "@sap/hdi-deploy": "^4"
+  },
+   "scripts": {
+    "start": "node node_modules/@sap/hdi-deploy/deploy.js"
   }
 }

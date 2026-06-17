@@ -9,6 +9,7 @@ modules:
   requires:
   - name: admin-config-db
   - name: uaa_admin-config
+  - name: admin-config-destination-service
   provides:
   - name: srv-api
     properties:
@@ -23,8 +24,6 @@ modules:
   path: db
   requires:
   - name: admin-config-db
-  parameters:
-    buildpack: nodejs_buildpack
 - name: admin-config-destination-content
   type: com.sap.application.content
   requires:

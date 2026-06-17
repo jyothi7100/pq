@@ -1,0 +1,227 @@
+<mvc:View
+  controllerName="config.controller.View1"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:unified="sap.ui.unified"
+  xmlns:core="sap.ui.core"
+  xmlns:layout="sap.ui.layout.form">
+
+  <Page id="_IDGenPage1" title="Admin Configuration" class="sapUiContentPadding">
+  <customHeader>
+    <Bar id="_IDGenBar1">
+      <contentLeft>
+        <Title id="_IDGenTitle3" text="Admin Configuration" level="H4"/>
+      </contentLeft>
+      <contentRight>
+        <Image id="_IDGenImage"
+          src="./images/logo.png"
+          height="40px"
+          densityAware="false"
+          class="sapUiSmallMarginEnd"/>
+      </contentRight>
+    </Bar>
+  </customHeader>
+
+    <content>
+
+      <!-- 🔔 Notification Emails -->
+      <Panel id="_IDGenPanel" class="sapUiSmallMargin sapUiNoContentPadding" backgroundDesign="Solid">
+        <VBox id="_IDGenVBox" class="sapUiSmallMargin">
+          <Title id="_IDGenTitle" text="Vendor Management Emails" level="H4"/>
+          <Text id="_IDGenText" text="Add or remove email addresses that receive system notifications." class="sapUiTinyMarginBottom"/>
+
+          <HBox id="_IDGenHBox" alignItems="Center" class="sapUiSmallMarginBottom">
+            <items>
+              <Input id="emailInput" placeholder="name@example.com" width="250px"/>
+              <Button id="_IDGenButton" text="+ Add" type="Emphasized" press=".onAddEmail"/>
+            </items>
+          </HBox>
+
+          <Table id="emailTable" items="{path:'/EmailRecipients'}">
+            <columns>
+              <Column id="_IDGenColumn"><Text id="_IDGenText1" text="Email Address"/></Column>
+              <Column id="_IDGenColumn2" hAlign="Center" width="4rem"><Text id="_IDGenText3" text=""/></Column>
+            </columns>
+            <items>
+              <ColumnListItem id="_IDGenColumnListItem">
+                <cells>
+                  <Text id="_IDGenText4" text="{email}"/>
+                  <Button id="_IDGenButton1" icon="sap-icon://delete" type="Transparent" press=".onDeleteEmail"/>
+                </cells>
+              </ColumnListItem>
+            </items>
+          </Table>
+
+          <Text id="_IDGenText6" text="{= ${/EmailRecipients}.length + ' emails configured'}" class="sapUiTinyMarginTop"/>
+        </VBox>
+      </Panel>
+
+      <!-- 📦 Commodity → Category Mapping -->
+      <Panel id="_IDGenPanel1" class="sapUiSmallMargin sapUiNoContentPadding" backgroundDesign="Solid">
+        <VBox id="_IDGenVBox1" class="sapUiSmallMargin">
+          <Title id="_IDGenTitle1" text="Commodity code → product category mapping" level="H4"/>
+          <Text id="_IDGenText7" text="Upload a CSV file with two columns: commodity_code and product_category." class="sapUiTinyMarginBottom"/>
+
+          <HBox id="_IDGenHBox1" alignItems="Center" justifyContent="SpaceBetween" class="sapUiSmallMarginBottom">
+            <items>
+              <unified:FileUploader
+                id="fileUploader"
+                name="uploadCsv"
+                fileType="csv"
+                change=".onFileChange"
+                width="300px"
+                placeholder="Click to upload a CSV"
+                tooltip="Replaces the current mapping"/>
+              <Button text="Upload CSV" type="Emphasized" press=".onUploadCsv" id="btnUpload" enabled="false"/>
+              <Button id="_IDGenButton2" text="Clear" icon="sap-icon://delete" press=".onClearPreview"/>
+            </items>
+          </HBox>
+
+          <Table id="previewTable" items="{preview>/rows}">
+            <columns>
+              <Column id="_IDGenColumn3"><Text id="_IDGenText8" text="Commodity Code"/></Column>
+              <Column id="_IDGenColumn5"><Text id="_IDGenText18" text="Commodity Description"/></Column>
+              <Column id="_IDGenColumn4"><Text id="_IDGenText9" text="Product Category"/></Column>
+            </columns>
+            <items>
+              <ColumnListItem id="_IDGenColumnListItem1">
+                <cells>
+                  <Text id="_IDGenText10" text="{preview>commodityCode}"/>
+                  <Text id="_IDGenText17" text="{preview>commodityDesc}"/>
+                  <Text id="_IDGenText11" text="{preview>productCategory}"/>
+                </cells>
+              </ColumnListItem>
+            </items>
+          </Table>
+        </VBox>
+      </Panel>
+
+      <!-- 🧩 PQ Configuration Panel -->
+<Panel id="pqConfigPanel" class="sapUiSmallMargin sapUiNoContentPadding" backgroundDesign="Solid">
+  <VBox id="_IDGenVBox3" class="sapUiSmallMargin">
+    <Title id="_IDGenTitle2" text="PQ Configuration" level="H4"/>
+
+    <!-- Two-column layout -->
+    <HBox id="_IDGenHBox2" alignItems="Start" justifyContent="SpaceBetween">
+
+      <!-- LEFT COLUMN -->
+      <VBox id="_IDGenVBox4" width="48%">
+
+        <!-- Template ID -->
+        <HBox id="_IDGenHBox3" class="sapUiSmallMarginBottom" alignItems="Center">
+          <Label id="_IDGenLabel" text="Template ID:" width="150px"/>
+          <Input id="templateId" width="100%" placeholder="Enter Template ID (e.g. WS321301746)"/>
+        </HBox>
+
+        <!-- Expiry Offset -->
+        <HBox id="_IDGenHBox5" class="sapUiSmallMarginBottom" alignItems="Center">
+          <Label id="_IDGenLabel2" text="Expiry Offset:" width="150px"/>
+          <Input id="expiryOffset" width="100%" type="Number" placeholder="e.g. 90"/>
+        </HBox>
+
+        <!-- Reminder Offset -->
+        <HBox id="_IDGenHBox6" class="sapUiSmallMarginBottom" alignItems="Center">
+          <Label id="_IDGenLabel3" text="Reminder Offset:" width="150px"/>
+          <Input id="expiryReminderOffset" width="100%" type="Number" placeholder="e.g. 10"/>
+        </HBox>
+
+        <!-- Internal ID -->
+        <HBox id="_IDGenHBox7" class="sapUiSmallMarginBottom" alignItems="Center">
+          <Label id="_IDGenLabel4" text="Internal ID:" width="150px"/>
+          <Input id="internalId" width="100%" placeholder="e.g. WS321293672"/>
+        </HBox>
+
+        <!-- Category Item ID -->
+        <HBox id="_IDGenHBox8" class="sapUiSmallMarginBottom" alignItems="Center">
+          <Label id="_IDGenLabel5" text="Category Item ID:" width="150px"/>
+          <Input id="categoryItemId" width="100%" placeholder="Enter Category Item ID"/>
+        </HBox>
+
+        <!-- Commodity Item ID -->
+        <HBox id="_IDGenHBox9" class="sapUiSmallMarginBottom" alignItems="Center">
+          <Label id="_IDGenLabel6" text="Commodity Item ID:" width="150px"/>
+          <Input id="commodityItemId" width="100%" placeholder="Enter Commodity Item ID"/>
+        </HBox>
+
+        <!-- Region Item ID -->
+        <HBox id="_IDGenHBox10" class="sapUiSmallMarginBottom" alignItems="Center">
+          <Label id="_IDGenLabel7" text="Region Item ID:" width="150px"/>
+          <Input id="regionItemId" width="100%" placeholder="Enter Region Item ID"/>
+        </HBox>
+
+        <!-- End Date Item ID -->
+        <HBox id="_IDGenHBox11" class="sapUiSmallMarginBottom" alignItems="Center">
+          <Label id="_IDGenLabel8" text="End Date Item ID:" width="150px"/>
+          <Input id="endDateItemId" width="100%" placeholder="Enter End Date Item ID"/>
+        </HBox>
+
+      </VBox>
+
+      <!-- RIGHT COLUMN -->
+      <VBox id="_IDGenVBox5" width="50%">
+
+        <!-- Template Process ID -->
+        <HBox id="_IDGenHBox12" class="sapUiSmallMarginBottom" alignItems="Center">
+          <Label id="_IDGenLabel9" text="Template Process ID:" width="170px"/>
+          <Input id="templateProcessId" width="100%" placeholder="Enter Process ID (e.g. PI306806781)"/>
+        </HBox>
+
+        <!-- Expiry Frequency -->
+<HBox id="_IDGenHBox14" class="sapUiSmallMarginBottom" alignItems="Center">
+  <Label id="_IDGenLabel10" text="Expiry Frequency:" width="170px"/>
+  <Select id="expiryFrequency" width="170px" forceSelection="false">
+    <core:Item id="_IDGenItem" key="Days" text="Days"/>
+    <core:Item id="_IDGenItem1" key="Months" text="Months"/>
+    <core:Item id="_IDGenItem2" key="Years" text="Years"/>
+  </Select>
+</HBox>
+
+<!-- Reminder Frequency -->
+<HBox id="_IDGenHBox19" class="sapUiSmallMarginBottom" alignItems="Center">
+  <Label id="_IDGenLabel11" text="Reminder Frequency:" width="170px"/>
+  <Select id="expiryReminderFrequency" width="170px" forceSelection="false">
+    <core:Item id="_IDGenItem3" key="Days" text="Days"/>
+    <core:Item id="_IDGenItem4" key="Months" text="Months"/>
+    <core:Item id="_IDGenItem5" key="Years" text="Years"/>
+  </Select>
+</HBox>
+
+        <!-- Category Correlation ID -->
+        <HBox id="_IDGenHBox15" class="sapUiSmallMarginBottom" alignItems="Center">
+          <Label id="_IDGenLabel12" text="Category Correlation ID:" width="170px"/>
+          <Input id="categoryCorrelationId" width="100%" placeholder="Enter Category Correlation ID"/>
+        </HBox>
+
+        <!-- Commodity Correlation ID -->
+        <HBox id="_IDGenHBox16" class="sapUiSmallMarginBottom" alignItems="Center">
+          <Label id="_IDGenLabel13" text="Commodity Correlation ID:" width="170px"/>
+          <Input id="commodityCorrelationId" width="100%" placeholder="Enter Commodity Correlation ID"/>
+        </HBox>
+
+        <!-- Region Correlation ID -->
+        <HBox id="_IDGenHBox17" class="sapUiSmallMarginBottom" alignItems="Center">
+          <Label id="_IDGenLabel14" text="Region Correlation ID:" width="170px"/>
+          <Input id="regionCorrelationId" width="100%" placeholder="Enter Region Correlation ID"/>
+        </HBox>
+
+        <!-- End Date Correlation ID -->
+        <HBox id="_IDGenHBox18" class="sapUiSmallMarginBottom" alignItems="Center">
+          <Label id="_IDGenLabel15" text="End Date Correlation ID:" width="170px"/>
+          <Input id="endDateCorrelationId" width="100%" placeholder="Enter End Date Correlation ID"/>
+        </HBox>
+
+      </VBox>
+
+    </HBox>
+
+    <Button id="_IDGenButton3"
+      text="Save PQ Configuration"
+      type="Emphasized"
+      press=".onSavePQConfig"
+      class="sapUiSmallMarginTop"/>
+  </VBox>
+</Panel>
+
+    </content>
+  </Page>
+</mvc:View>
