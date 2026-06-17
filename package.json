@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "dependencies": {
     "@cap-js/hana": "^2",
+    "@sap-cloud-sdk/http-client": "^4.7.0",
+    "@sap-cloud-sdk/resilience": "^4.7.0",
     "@sap/cds": "^9",
     "@sap/xssec": "^4",
     "csv-parse": "^6.2.1",
@@ -46,9 +48,95 @@
       },
       "[production]": {
         "auth": "xsuaa"
+      },
+      "ARIBA_OAUTH_PROD": {
+        "kind": "rest",
+        "credentials": {
+          "destination": "ARIBA_OAUTH"
+        }
+      },
+      "ARIBA_SUPPLIER_PAGINATION_PROD": {
+        "kind": "rest",
+        "credentials": {
+          "destination": "ARIBA_SUPPLIER_PAGINATION"
+        }
+      },
+      "ARIBA_PROCESSES_PROD": {
+        "kind": "rest",
+        "credentials": {
+          "destination": "ARIBA_PROCESSES"
+        }
+      },
+      "ARIBA_WORKSPACES_PROD": {
+        "kind": "rest",
+        "credentials": {
+          "destination": "ARIBA_WORKSPACES"
+        }
+      },
+      "ARIBA_PQ_TRIGGER_PROD": {
+        "kind": "rest",
+        "credentials": {
+          "destination": "ARIBA_PQ_TRIGGER"
+        }
+      }
+    },
+    "[development]": {
+      "requires": {
+        "db": {
+          "kind": "sqlite",
+          "credentials": {
+            "url": ":memory:"
+          }
+        },
+        "ARIBA_OAUTH": {
+          "kind": "rest",
+          "credentials": {
+            "url": "https://api.mn1.ariba.com",
+            "headers": {
+              "Authorization": "Basic N2I1Zjg5ZWMtN2IyMC00ZGQ2LTk5OTMtYTdkMGFlMDExNjlhOnBDcUFBdmNjczE2NFhrRXFwRWZvajlabks1VlhzbzRv"
+            }
+          }
+        },
+        "ARIBA_SUPPLIER_PAGINATION": {
+          "kind": "rest",
+          "credentials": {
+            "url": "https://mn1.openapi.ariba.com",
+            "headers": {
+              "apiKey": "PvYjyxNHJjwBUN3xTwezHbh9MutVFNgg"
+            }
+          }
+        },
+        "ARIBA_PROCESSES": {
+          "kind": "rest",
+          "credentials": {
+            "url": "https://mn1.openapi.ariba.com",
+            "headers": {
+              "apiKey": "PvYjyxNHJjwBUN3xTwezHbh9MutVFNgg"
+            }
+          }
+        },
+        "ARIBA_WORKSPACES": {
+          "kind": "rest",
+          "credentials": {
+            "url": "https://mn1.openapi.ariba.com",
+            "headers": {
+              "apiKey": "PvYjyxNHJjwBUN3xTwezHbh9MutVFNgg"
+            }
+          }
+        },
+        "ARIBA_PQ_TRIGGER": {
+          "kind": "rest",
+          "credentials": {
+            "url": "https://mn1.openapi.ariba.com",
+            "headers": {
+              "apiKey": "PvYjyxNHJjwBUN3xTwezHbh9MutVFNgg"
+            }
+          }
+        }
       }
     }
   },
+
   "private": true,
   "workspaces": [
     "app/*"

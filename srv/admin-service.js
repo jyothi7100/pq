@@ -322,47 +322,117 @@ module.exports = cds.service.impl(async function () {
   // ============================================================
   // STEP 1 — OAUTH TOKEN
   // ============================================================
-  async function getOAuthToken() {
-    try {
-      console.log("\n================ STEP 1: OAUTH TOKEN =====================");
+  // async function getOAuthToken() {
+  //   try {
+  //     console.log("\n================ STEP 1: OAUTH TOKEN =====================");
 
-      const url = "https://api.mn1.ariba.com/v2/oauth/token";
+  //     const url = "https://api.mn1.ariba.com/v2/oauth/token";
 
-      const headers = {
-        "Content-Type": "application/x-www-form-urlencoded",
-        "Authorization": "Basic N2I1Zjg5ZWMtN2IyMC00ZGQ2LTk5OTMtYTdkMGFlMDExNjlhOnBDcUFBdmNjczE2NFhrRXFwRWZvajlabks1VlhzbzRv"
-      };
+  //     const headers = {
+  //       "Content-Type": "application/x-www-form-urlencoded",
+  //       "Authorization": "Basic N2I1Zjg5ZWMtN2IyMC00ZGQ2LTk5OTMtYTdkMGFlMDExNjlhOnBDcUFBdmNjczE2NFhrRXFwRWZvajlabks1VlhzbzRv"
+  //     };
 
-      const body = new URLSearchParams({ grant_type: "openapi_2lo" });
+  //     const body = new URLSearchParams({ grant_type: "openapi_2lo" });
 
-      const response = await axios.post(url, body, { headers });
+  //     const response = await axios.post(url, body, { headers });
 
-      console.log("OAuth Response:");
-      console.log(JSON.stringify(response.data, null, 2));
-      console.log("==========================================================\n");
+  //     console.log("OAuth Response:");
+  //     console.log(JSON.stringify(response.data, null, 2));
+  //     console.log("==========================================================\n");
 
-      return response.data.access_token;
+  //     return response.data.access_token;
 
-    } catch (err) {
-      console.error("STEP 1 — OAUTH TOKEN FAILED");
-      console.error(err.response?.data || err);
-      throw new Error("OAuth Token Failed");
-    }
+  //   } catch (err) {
+  //     console.error("STEP 1 — OAUTH TOKEN FAILED");
+  //     console.error(err.response?.data || err);
+  //     throw new Error("OAuth Token Failed");
+  //   }
+  // }
+
+  const oauthServiceName = process.env.NODE_ENV === "production" ? "ARIBA_OAUTH_PROD" : "ARIBA_OAUTH";
+
+async function getOAuthToken() {
+  try {
+    console.log("\n================ STEP 1: OAUTH TOKEN =====================");
+    const oauth = await cds.connect.to(oauthServiceName);
+
+    const response = await oauth.send({
+      method: "POST",
+      path: "/v2/oauth/token",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      data: "grant_type=openapi_2lo"
+    });
+
+    return response.access_token;
+
+  } catch (err) {
+    console.error("STEP 1 — OAUTH TOKEN FAILED");
+    console.error(err);
+    throw new Error("OAuth Token Failed");
   }
-
+}
   function toAribaTimestamp(date) {
   return new Date(date).toISOString().replace(/\.\d{3}Z$/, "Z");
 }
 
 
-  // ============================================================
-  // STEP 2 — FETCH REGISTERED SUPPLIERS
-  // ============================================================
-  async function fetchRegisteredSuppliers(token, updatedDateFrom, updatedDateTo) {
-    try {
-      console.log("\n================ STEP 2: FETCH REGISTERED SUPPLIERS =====================");
+  // // ============================================================
+  // // STEP 2 — FETCH REGISTERED SUPPLIERS
+  // // ============================================================
+  // async function fetchRegisteredSuppliers(token, updatedDateFrom, updatedDateTo) {
+  //   try {
+  //     console.log("\n================ STEP 2: FETCH REGISTERED SUPPLIERS =====================");
 
-      // ⭐ FIX: Auto-generate timestamps if missing
+  //     // ⭐ FIX: Auto-generate timestamps if missing
+  //   if (!updatedDateFrom || !updatedDateTo) {
+  //     const now = new Date();
+  //     const oneMonthAgo = new Date();
+  //     oneMonthAgo.setMonth(now.getMonth() - 1);
+
+  //     updatedDateFrom = toAribaTimestamp(oneMonthAgo);
+  //     updatedDateTo   = toAribaTimestamp(now);
+  //   }
+
+  //     const url = `https://mn1.openapi.ariba.com/api/supplierdatapagination/v4/prod/vendorDataRequests?realm=746138565-T&$filter=updatedDateFrom ge '${updatedDateFrom}' and updatedDateTo le '${updatedDateTo}'`;
+
+  //     const headers = {
+  //       "apiKey": "PvYjyxNHJjwBUN3xTwezHbh9MutVFNgg",
+  //       "Content-Type": "application/json",
+  //       "Authorization": `Bearer ${token}`
+  //     };
+
+  //     const body = {
+  //       outputFormat: "JSON",
+  //       withQuestionnaire: true,
+  //       registrationStatusList: ["Registered"]
+  //     };
+
+  //     const response = await axios.post(url, body, { headers });
+
+  //     console.log("Supplier Pagination API Response:");
+  //     console.log(JSON.stringify(response.data, null, 2));
+  //     console.log("=======================================================================\n");
+
+  //     return response.data;
+
+  //   } catch (err) {
+  //     console.error("STEP 2 — FETCH REGISTERED SUPPLIERS FAILED");
+  //     console.error(err.response?.data || err);
+  //     throw new Error("Supplier Fetch Failed");
+  //   }
+  // }
+
+  // ============================================================
+// STEP 2 — FETCH REGISTERED SUPPLIERS
+// ============================================================
+async function fetchRegisteredSuppliers(token, updatedDateFrom, updatedDateTo) {
+  try {
+    console.log("\n================ STEP 2: FETCH REGISTERED SUPPLIERS =====================");
+
+    // ⭐ Auto-generate timestamps if missing
     if (!updatedDateFrom || !updatedDateTo) {
       const now = new Date();
       const oneMonthAgo = new Date();
@@ -372,92 +442,158 @@ module.exports = cds.service.impl(async function () {
       updatedDateTo   = toAribaTimestamp(now);
     }
 
-      const url = `https://mn1.openapi.ariba.com/api/supplierdatapagination/v4/prod/vendorDataRequests?realm=746138565-T&$filter=updatedDateFrom ge '${updatedDateFrom}' and updatedDateTo le '${updatedDateTo}'`;
+    const supplierServiceName = process.env.NODE_ENV === "production" ? "ARIBA_SUPPLIER_PAGINATION_PROD" : "ARIBA_SUPPLIER_PAGINATION";
+    const supplierService = await cds.connect.to(supplierServiceName);
 
-      const headers = {
-        "apiKey": "PvYjyxNHJjwBUN3xTwezHbh9MutVFNgg",
-        "Content-Type": "application/json",
+    const response = await supplierService.send({
+      method : "POST",
+      path   : `/vendorDataRequests?realm=746138565-T&$filter=updatedDateFrom ge '${updatedDateFrom}' and updatedDateTo le '${updatedDateTo}'`,
+      headers: {
+        "apiKey"       : "PvYjyxNHJjwBUN3xTwezHbh9MutVFNgg",
+        "Content-Type" : "application/json",
         "Authorization": `Bearer ${token}`
-      };
-
-      const body = {
-        outputFormat: "JSON",
-        withQuestionnaire: true,
+      },
+      data: {
+        outputFormat          : "JSON",
+        withQuestionnaire     : true,
         registrationStatusList: ["Registered"]
-      };
+      }
+    });
 
-      const response = await axios.post(url, body, { headers });
+    console.log("Supplier Pagination API Response:");
+    console.log(JSON.stringify(response, null, 2));
+    console.log("=======================================================================\n");
 
-      console.log("Supplier Pagination API Response:");
-      console.log(JSON.stringify(response.data, null, 2));
-      console.log("=======================================================================\n");
+    return response;
 
-      return response.data;
-
-    } catch (err) {
-      console.error("STEP 2 — FETCH REGISTERED SUPPLIERS FAILED");
-      console.error(err.response?.data || err);
-      throw new Error("Supplier Fetch Failed");
-    }
+  } catch (err) {
+    console.error("STEP 2 — FETCH REGISTERED SUPPLIERS FAILED");
+    console.error(err);
+    throw new Error("Supplier Fetch Failed");
   }
+}
+
+  // // ============================================================
+  // // STEP 3 — FETCH PROCESSES FOR EACH SUPPLIER
+  // // ============================================================
+  // async function fetchSupplierProcesses(token, smVendorId) {
+  //   try {
+  //     console.log(`\n===== STEP 3: FETCH PROCESSES FOR SUPPLIER ${smVendorId} =====`);
+
+  //     const url = `https://mn1.openapi.ariba.com/api/supplierdatapagination/v4/prod/vendors/${smVendorId}/processes?realm=746138565-T`;
+
+  //     const headers = {
+  //       "apiKey": "PvYjyxNHJjwBUN3xTwezHbh9MutVFNgg",
+  //       "Content-Type": "application/json",
+  //       "Authorization": `Bearer ${token}`
+  //     };
+
+  //     const response = await axios.get(url, { headers });
+
+  //     console.log(`Processes for ${smVendorId}:`);
+  //     console.log(JSON.stringify(response.data, null, 2));
+
+  //     return response.data;
+
+  //   } catch (err) {
+  //     console.error(`FAILED fetching processes for ${smVendorId}`);
+  //     console.error(err.response?.data || err);
+  //     return null;
+  //   }
+  // }
 
   // ============================================================
-  // STEP 3 — FETCH PROCESSES FOR EACH SUPPLIER
-  // ============================================================
-  async function fetchSupplierProcesses(token, smVendorId) {
-    try {
-      console.log(`\n===== STEP 3: FETCH PROCESSES FOR SUPPLIER ${smVendorId} =====`);
+// STEP 3 — FETCH PROCESSES FOR EACH SUPPLIER
+// ============================================================
+async function fetchSupplierProcesses(token, smVendorId) {
+  try {
+    console.log(`\n===== STEP 3: FETCH PROCESSES FOR SUPPLIER ${smVendorId} =====`);
 
-      const url = `https://mn1.openapi.ariba.com/api/supplierdatapagination/v4/prod/vendors/${smVendorId}/processes?realm=746138565-T`;
+    const processesServiceName = process.env.NODE_ENV === "production" ? "ARIBA_PROCESSES_PROD" : "ARIBA_PROCESSES";
+    const processesService = await cds.connect.to(processesServiceName);
 
-      const headers = {
-        "apiKey": "PvYjyxNHJjwBUN3xTwezHbh9MutVFNgg",
-        "Content-Type": "application/json",
+    const response = await processesService.send({
+      method : "GET",
+      path   : `/${smVendorId}/processes?realm=746138565-T`,
+      headers: {
+        "apiKey"       : "PvYjyxNHJjwBUN3xTwezHbh9MutVFNgg",
+        "Content-Type" : "application/json",
         "Authorization": `Bearer ${token}`
-      };
+      }
+    });
 
-      const response = await axios.get(url, { headers });
+    console.log(`Processes for ${smVendorId}:`);
+    console.log(JSON.stringify(response, null, 2));
 
-      console.log(`Processes for ${smVendorId}:`);
-      console.log(JSON.stringify(response.data, null, 2));
+    return response;
 
-      return response.data;
-
-    } catch (err) {
-      console.error(`FAILED fetching processes for ${smVendorId}`);
-      console.error(err.response?.data || err);
-      return null;
-    }
+  } catch (err) {
+    console.error(`FAILED fetching processes for ${smVendorId}`);
+    console.error(err);
+    return null;
   }
+}
+
+  // // ============================================================
+  // // STEP 4A — FETCH VENDOR WORKSPACES
+  // // ============================================================
+  // async function fetchVendorWorkspaces(token, smVendorId) {
+  //   try {
+  //     console.log(`\n===== STEP 4A: FETCH WORKSPACES FOR SUPPLIER ${smVendorId} =====`);
+
+  //     const url = `https://mn1.openapi.ariba.com/api/supplierdatapagination/v4/prod/vendors/${smVendorId}/workspaces?realm=746138565-T&$top=1`;
+
+  //     const headers = {
+  //       "apiKey": "PvYjyxNHJjwBUN3xTwezHbh9MutVFNgg",
+  //       "Content-Type": "application/json",
+  //       "Authorization": `Bearer ${token}`
+  //     };
+
+  //     const response = await axios.get(url, { headers });
+
+  //     console.log(`Workspaces for ${smVendorId}:`);
+  //     console.log(JSON.stringify(response.data, null, 2));
+
+  //     return response.data;
+
+  //   } catch (err) {
+  //     console.error(`FAILED fetching workspaces for ${smVendorId}`);
+  //     console.error(err.response?.data || err);
+  //     return null;
+  //   }
+  // }
 
   // ============================================================
-  // STEP 4A — FETCH VENDOR WORKSPACES
-  // ============================================================
-  async function fetchVendorWorkspaces(token, smVendorId) {
-    try {
-      console.log(`\n===== STEP 4A: FETCH WORKSPACES FOR SUPPLIER ${smVendorId} =====`);
+// STEP 4A — FETCH VENDOR WORKSPACES
+// ============================================================
+async function fetchVendorWorkspaces(token, smVendorId) {
+  try {
+    console.log(`\n===== STEP 4A: FETCH WORKSPACES FOR SUPPLIER ${smVendorId} =====`);
 
-      const url = `https://mn1.openapi.ariba.com/api/supplierdatapagination/v4/prod/vendors/${smVendorId}/workspaces?realm=746138565-T&$top=1`;
+    const processesServiceName = process.env.NODE_ENV === "production" ? "ARIBA_PROCESSES_PROD" : "ARIBA_PROCESSES";
+    const processesService = await cds.connect.to(processesServiceName);
 
-      const headers = {
-        "apiKey": "PvYjyxNHJjwBUN3xTwezHbh9MutVFNgg",
-        "Content-Type": "application/json",
+    const response = await processesService.send({
+      method : "GET",
+      path   : `/${smVendorId}/workspaces?realm=746138565-T&$top=1`,
+      headers: {
+        "apiKey"       : "PvYjyxNHJjwBUN3xTwezHbh9MutVFNgg",
+        "Content-Type" : "application/json",
         "Authorization": `Bearer ${token}`
-      };
+      }
+    });
 
-      const response = await axios.get(url, { headers });
+    console.log(`Workspaces for ${smVendorId}:`);
+    console.log(JSON.stringify(response, null, 2));
 
-      console.log(`Workspaces for ${smVendorId}:`);
-      console.log(JSON.stringify(response.data, null, 2));
+    return response;
 
-      return response.data;
-
-    } catch (err) {
-      console.error(`FAILED fetching workspaces for ${smVendorId}`);
-      console.error(err.response?.data || err);
-      return null;
-    }
+  } catch (err) {
+    console.error(`FAILED fetching workspaces for ${smVendorId}`);
+    console.error(err);
+    return null;
   }
+}
 
   // ============================================================
   // STEP 5 — BUILD COMBINED PAYLOAD (ARIBA + HANA PQCONFIG + MAPPING TABLE)
@@ -662,61 +798,112 @@ if (mappedCategories.length === 0) {
     };
   }
 
-  // ============================================================
-  // STEP 7 — TRIGGER PQ
-  // ============================================================
-  async function triggerPQ(pqBody, token) {
-    try {
-      const url = "https://mn1.openapi.ariba.com/api/supplierdatapagination/v4/prod/processes/processCreateRequests?realm=746138565-T";
+//   // ============================================================
+//   // STEP 7 — TRIGGER PQ
+//   // ============================================================
+//   async function triggerPQ(pqBody, token) {
+//     try {
+//       const url = "https://mn1.openapi.ariba.com/api/supplierdatapagination/v4/prod/processes/processCreateRequests?realm=746138565-T";
 
-      const headers = {
-        "apiKey"       : "PvYjyxNHJjwBUN3xTwezHbh9MutVFNgg",
-        "Content-Type" : "application/json",
-        "Authorization": `Bearer ${token}`
-      };
+//       const headers = {
+//         "apiKey"       : "PvYjyxNHJjwBUN3xTwezHbh9MutVFNgg",
+//         "Content-Type" : "application/json",
+//         "Authorization": `Bearer ${token}`
+//       };
 
-      console.log("\n===== SENDING PQ TRIGGER REQUEST =====");
-      console.log(JSON.stringify(pqBody, null, 2));
+//       console.log("\n===== SENDING PQ TRIGGER REQUEST =====");
+//       console.log(JSON.stringify(pqBody, null, 2));
 
-      const response = await axios.post(url, pqBody, { headers });
+//       const response = await axios.post(url, pqBody, { headers });
 
-      console.log("\n===== PQ TRIGGER RESPONSE =====");
-      console.log(JSON.stringify(response.data, null, 2));
+//       console.log("\n===== PQ TRIGGER RESPONSE =====");
+//       console.log(JSON.stringify(response.data, null, 2));
 
-      return response.data;
+//       return response.data;
 
-    } catch (err) {
-      console.error("❌ PQ Trigger Failed");
-      console.error(err.response?.data || err);
+//     } catch (err) {
+//       console.error("❌ PQ Trigger Failed");
+//       console.error(err.response?.data || err);
 
-      // ⭐ EMAIL TRIGGER — PQ FAILURE
-      const stepName = "PQ Trigger";
-      const reasonDescription = "PQ API returned an error.";
+//       // ⭐ EMAIL TRIGGER — PQ FAILURE
+//       const stepName = "PQ Trigger";
+//       const reasonDescription = "PQ API returned an error.";
 
-     // const emailBody = buildErrorEmail(
-     //   pqBody,
-       // stepName,
-       // err.message || JSON.stringify(err.response?.data),
-        //reasonDescription
-      //);
+//      // const emailBody = buildErrorEmail(
+//      //   pqBody,
+//        // stepName,
+//        // err.message || JSON.stringify(err.response?.data),
+//         //reasonDescription
+//       //);
 
-     // await sendErrorEmail("PQ Trigger Failure", emailBody);
+//      // await sendErrorEmail("PQ Trigger Failure", emailBody);
 
-     const htmlBody = buildErrorEmail(
-  combined,
-  stepName,
-  errorMessage,
-  reasonDescription
-);
+//      const htmlBody = buildErrorEmail(
+//   combined,
+//   stepName,
+//   errorMessage,
+//   reasonDescription
+// );
 
-await sendErrorEmail(
-  `PQ Processing Failure - ${stepName}`,
-  htmlBody
-);
+// await sendErrorEmail(
+//   `PQ Processing Failure - ${stepName}`,
+//   htmlBody
+// );
 
-      throw err;
-    }
+//       throw err;
+//     }
+//   }
+
+// ============================================================
+// STEP 7 — TRIGGER PQ
+// ============================================================
+async function triggerPQ(pqBody, token) {
+  try {
+    const pqTriggerServiceName = process.env.NODE_ENV === "production" ? "ARIBA_PQ_TRIGGER_PROD" : "ARIBA_PQ_TRIGGER";
+    const pqTriggerService = await cds.connect.to(pqTriggerServiceName);
+
+    console.log("\n===== SENDING PQ TRIGGER REQUEST =====");
+    console.log(JSON.stringify(pqBody, null, 2));
+
+    const response = await pqTriggerService.send({
+  method : "POST",
+  path   : `/processCreateRequests?realm=746138565-T`,
+  headers: {
+    "apiKey"       : "PvYjyxNHJjwBUN3xTwezHbh9MutVFNgg",
+    "Content-Type" : "application/json",
+    "Authorization": `Bearer ${token}`
+  },
+  data: pqBody
+});
+
+    console.log("\n===== PQ TRIGGER RESPONSE =====");
+    console.log(JSON.stringify(response, null, 2));
+
+    return response;
+
+  } catch (err) {
+    console.error("❌ PQ Trigger Failed");
+    console.error(err);
+
+    // ⭐ EMAIL TRIGGER — PQ FAILURE
+    const stepName = "PQ Trigger";
+    const reasonDescription = "PQ API returned an error.";
+
+    const htmlBody = buildErrorEmail(
+      pqBody,
+      stepName,
+      err.message || JSON.stringify(err.response?.data || err),
+      reasonDescription
+    );
+
+    await sendErrorEmail(
+      `PQ Processing Failure - ${stepName}`,
+      htmlBody
+    );
+
+    throw err;
   }
+}
 
   function shouldTriggerPQ(processes) {
   // No processes → trigger PQ
