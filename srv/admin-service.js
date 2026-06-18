@@ -359,7 +359,7 @@ async function getOAuthToken() {
 
     const response = await oauth.send({
       method: "POST",
-      path: "",
+      path: "/v2/oauth/token",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded"
       },

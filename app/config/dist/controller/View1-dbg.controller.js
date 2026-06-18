@@ -23,6 +23,8 @@ sap.ui.define([
   this._loadEmails();
 
   // Load PQ config from HANA
+  console.log("onInit fired in deployed app");
+
   this._loadPQConfig();
     },
 
@@ -32,7 +34,7 @@ sap.ui.define([
 
     _loadPQConfig: function () {
   $.ajax({
-    url     : "/odata/v4/admin/PQConfig?$top=1",
+    url     : "odata/v4/admin/PQConfig?$top=1",
     method  : "GET",
     headers : { "Accept": "application/json" },
     success : (oData) => {
@@ -103,12 +105,12 @@ sap.ui.define([
   const oModel  = this.getView().getModel();
   const sMethod = this._existingConfigId ? "PATCH" : "POST";
   const sUrl    = this._existingConfigId
-    ? "/odata/v4/admin/PQConfig(" + this._existingConfigId + ")"
-    : "/odata/v4/admin/PQConfig";
+    ? "odata/v4/admin/PQConfig(" + this._existingConfigId + ")"
+    : "odata/v4/admin/PQConfig";
 
   // Step 1: fetch CSRF token first
   $.ajax({
-    url     : "/odata/v4/admin/",
+    url     : "odata/v4/admin/",
     method  : "GET",
     headers : { "X-CSRF-Token": "Fetch" },
     success : (data, status, xhr) => {
@@ -169,14 +171,14 @@ sap.ui.define([
 
   // ── Save to HANA via OData ──
   $.ajax({
-    url     : "/odata/v4/admin/",
+    url     : "odata/v4/admin/",
     method  : "GET",
     headers : { "X-CSRF-Token": "Fetch" },
     success : (data, status, xhr) => {
       const sToken = xhr.getResponseHeader("X-CSRF-Token");
 
       $.ajax({
-        url         : "/odata/v4/admin/EmailRecipients",
+        url         : "odata/v4/admin/EmailRecipients",
         method      : "POST",
         contentType : "application/json",
         headers     : { "X-CSRF-Token": sToken },
@@ -205,7 +207,7 @@ sap.ui.define([
 
 _loadEmails: function () {
   $.ajax({
-    url     : "/odata/v4/admin/EmailRecipients",
+    url     : "odata/v4/admin/EmailRecipients",
     method  : "GET",
     headers : { "Accept": "application/json" },
     success : (oData) => {
@@ -244,14 +246,14 @@ onDeleteEmail: function (oEvent) {
 
   // ── Delete from HANA via OData ──
   $.ajax({
-    url     : "/odata/v4/admin/",
+    url     : "odata/v4/admin/",
     method  : "GET",
     headers : { "X-CSRF-Token": "Fetch" },
     success : (data, status, xhr) => {
       const sToken = xhr.getResponseHeader("X-CSRF-Token");
 
       $.ajax({
-        url     : "/odata/v4/admin/EmailRecipients(" + oEmail.ID + ")",
+        url     : "odata/v4/admin/EmailRecipients(" + oEmail.ID + ")",
         method  : "DELETE",
         headers : { "X-CSRF-Token": sToken },
         success : () => {
@@ -324,14 +326,14 @@ onDeleteEmail: function (oEvent) {
   }
 
   $.ajax({
-    url     : "/odata/v4/admin/",
+    url     : "odata/v4/admin/",
     method  : "GET",
     headers : { "X-CSRF-Token": "Fetch" },
     success : (data, status, xhr) => {
       const sToken = xhr.getResponseHeader("X-CSRF-Token");
 
       $.ajax({
-        url         : "/odata/v4/admin/UploadCommodityMappings",
+        url         : "odata/v4/admin/UploadCommodityMappings",
         method      : "POST",
         contentType : "application/json",
         headers     : { "X-CSRF-Token": sToken },
