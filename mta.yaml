@@ -3,6 +3,27 @@ ID: admin-config
 description: A simple CAP project.
 version: 1.0.0
 modules:
+- name: admin-config-approuter
+  type: approuter.nodejs
+  path: app/router
+  requires:
+  - name: srv-api
+  - name: uaa_admin-config
+  - name: admin-config-destination-service
+  parameters:
+    disk-quota: 512M
+    memory: 256M
+  build-parameters:
+    requires:
+    - name: config
+      artifacts:
+      - '*.zip'
+      target-path: resources/
+    builder: custom
+    commands:
+    - npm install --production
+    - unzip -o resources/config.zip -d resources
+    - rm resources/config.zip
 - name: admin-config-srv
   type: nodejs
   path: gen/srv

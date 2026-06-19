@@ -1,0 +1,14 @@
+{
+  "name": "admin-config-approuter",
+  "version": "1.0.0",
+  "description": "Standalone approuter for admin-config",
+  "engines": {
+    "node": "^20"
+  },
+  "dependencies": {
+    "@sap/approuter": "^15"
+  },
+  "scripts": {
+    "start": "node node_modules/@sap/approuter/approuter.js"
+  }
+}

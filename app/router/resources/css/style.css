@@ -1,0 +1,20 @@
+.sapMPanel {
+  background-color: #232222;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.819);
+  color: #1f9947;
+}
+
+.sapMTitle, .sapMText {
+  color: #1e1c1e;
+}
+
+.sapMButton {
+  margin-left: 0.5rem;
+}
+
+.sapMSltArrow {
+  color: #333;
+  font-weight: bold;
+}
+
