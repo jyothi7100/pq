@@ -879,6 +879,17 @@ async function triggerPQ(pqBody, token) {
     console.log("\n===== PQ TRIGGER RESPONSE =====");
     console.log(JSON.stringify(response, null, 2));
 
+    // ⭐ Ariba can return HTTP 200 with an error payload — check explicitly
+    if (response?.status === "ERROR") {
+      const rawMessage = response.errorMessages?.[0]?.message || "Ariba returned status ERROR with no message";
+
+      // ⭐ Try to extract the clean "S4 user message" reason buried in the raw text
+      const s4Match = rawMessage.match(/S4 user message:\s*(.+?)["\]]/);
+      const cleanReason = s4Match ? s4Match[1].trim() : rawMessage;
+
+      throw new Error(`Ariba PQ Trigger returned ERROR: ${cleanReason}`);
+    }
+
     return response;
 
   } catch (err) {
@@ -931,62 +942,35 @@ async function triggerPQ(pqBody, token) {
   return expiryDate <= today;
 }
 
-  
-
-  // ============================================================
-// STEP 8 — FULL BACKGROUND JOB (ALL STEPS)
 // ============================================================
-async function runFullPQBackgroundJob() {
+// STEP 8 — PROCESS A SINGLE SUPPLIER (STEPS 3-7)
+// ============================================================
+async function processSupplier(token, supplier) {
+  const vendorId = supplier["SM Vendor ID"];
+
   try {
-    console.log("\n================ RUN PQ BACKGROUND JOB ====================");
+    // STEP 3 — Fetch processes for this vendor
+    console.log(`\n===== FETCHING PROCESSES FOR ${vendorId} =====`);
+    const processData = await fetchSupplierProcesses(token, vendorId);
+    const processes = processData?.processes || [];
 
-    const token = await getOAuthToken();
+    // Log expiry date for visibility
+    let latestExpiry = 0;
+    for (const p of processes) {
+      if (p.expiryDate && p.expiryDate > latestExpiry) {
+        latestExpiry = p.expiryDate;
+      }
+    }
+    const expiryDate = latestExpiry ? new Date(latestExpiry).toISOString() : "none";
+    console.log(`Expiry date for ${vendorId}: ${expiryDate}`);
 
-    const updatedDateFrom = "2026-04-01T00:00:00Z";
-    const updatedDateTo   = new Date().toISOString();
-
-    // STEP 1 — Fetch ALL registered suppliers
-    const supplierResponse = await fetchRegisteredSuppliers(token, updatedDateFrom, updatedDateTo);
-
-    // ⭐ FIX: Ariba sometimes returns an array, sometimes { result: [] }
-    const suppliers = Array.isArray(supplierResponse)
-      ? supplierResponse
-      : supplierResponse?.result || [];
-
-    console.log(`Total suppliers fetched: ${suppliers.length}`);
-
-    // STEP 2 — Hardcoded vendor
-    const vendorId = "S11392486";
-    const supplier = suppliers.find(s => s["SM Vendor ID"] === vendorId);
-
-    if (!supplier) {
-      console.error(`❌ Supplier ${vendorId} not found in Step 1 results`);
-      return;
+    // STEP 4 — Expiry logic
+    if (!shouldTriggerPQ(processes)) {
+      console.log(`⏳ PQ still valid for ${vendorId} — SKIPPING PQ TRIGGER`);
+      return { vendorId, status: "skipped" };
     }
 
-   // STEP 3 — Fetch processes for this vendor
-console.log(`\n===== FETCHING PROCESSES FOR ${vendorId} =====`);
-const processData = await fetchSupplierProcesses(token, vendorId);
-const processes = processData?.processes || [];
-
-// ⭐ Log expiry date for visibility
-let latestExpiry = 0;
-for (const p of processes) {
-  if (p.expiryDate && p.expiryDate > latestExpiry) {
-    latestExpiry = p.expiryDate;
-  }
-}
-const expiryDate = latestExpiry ? new Date(latestExpiry).toISOString() : "none";
-console.log(`Expiry date for ${vendorId}: ${expiryDate}`);
-
-// STEP 4 — Expiry logic
-if (!shouldTriggerPQ(processes)) {
-  console.log(`⏳ PQ still valid for ${vendorId} — SKIPPING PQ TRIGGER`);
-  return;
-}
-
-console.log(`🔥 PQ expired or missing for ${vendorId} — WILL TRIGGER PQ`);
-
+    console.log(`🔥 PQ expired or missing for ${vendorId} — WILL TRIGGER PQ`);
 
     // STEP 5 — Fetch workspaces
     console.log(`\n===== FETCHING WORKSPACES FOR ${vendorId} =====`);
@@ -1001,11 +985,148 @@ console.log(`🔥 PQ expired or missing for ${vendorId} — WILL TRIGGER PQ`);
     await triggerPQ(pqBody, token);
 
     console.log(`\n===== PQ TRIGGERED SUCCESSFULLY FOR ${vendorId} =====`);
+    return { vendorId, status: "triggered" };
 
   } catch (err) {
-    console.error("FULL PQ BACKGROUND JOB FAILED:", err);
+    // ⭐ Continue with remaining suppliers — log and move on
+    console.error(`❌ FAILED processing supplier ${vendorId}:`, err.message || err);
+    return { vendorId, status: "failed", error: err.message || String(err) };
   }
 }
+
+// ============================================================
+// STEP 9 — FULL BACKGROUND JOB (ALL SUPPLIERS)
+// ============================================================
+async function runFullPQBackgroundJob() {
+  console.log("\n================ RUN PQ BACKGROUND JOB ====================");
+
+  let token;
+  try {
+    token = await getOAuthToken();
+  } catch (err) {
+    console.error("FULL PQ BACKGROUND JOB FAILED at OAuth step:", err);
+    return;
+  }
+
+  const updatedDateFrom = "2026-04-01T00:00:00Z";
+  const updatedDateTo   = new Date().toISOString();
+
+  let suppliers = [];
+  try {
+    const supplierResponse = await fetchRegisteredSuppliers(token, updatedDateFrom, updatedDateTo);
+
+    // ⭐ Ariba sometimes returns an array, sometimes { result: [] }
+    suppliers = Array.isArray(supplierResponse)
+      ? supplierResponse
+      : supplierResponse?.result || [];
+
+  } catch (err) {
+    console.error("FULL PQ BACKGROUND JOB FAILED at Supplier Fetch step:", err);
+    return;
+  }
+
+  console.log(`Total suppliers fetched: ${suppliers.length}`);
+
+  const results = [];
+
+  // ⭐ Loop over every supplier — continue even if one fails
+  for (const supplier of suppliers) {
+    const vendorId = supplier["SM Vendor ID"];
+    if (!vendorId) {
+      console.warn("⚠ Skipping supplier with missing SM Vendor ID");
+      continue;
+    }
+
+    const result = await processSupplier(token, supplier);
+    results.push(result);
+  }
+
+  const triggered = results.filter(r => r.status === "triggered").length;
+  const skipped   = results.filter(r => r.status === "skipped").length;
+  const failed    = results.filter(r => r.status === "failed").length;
+
+  console.log(`\n===== PQ BACKGROUND JOB SUMMARY =====`);
+  console.log(`Total: ${results.length} | Triggered: ${triggered} | Skipped: ${skipped} | Failed: ${failed}`);
+
+  if (failed > 0) {
+    console.log("Failed suppliers:", results.filter(r => r.status === "failed"));
+  }
+}
+  
+
+//   // ============================================================
+// // STEP 8 — FULL BACKGROUND JOB (ALL STEPS)
+// // ============================================================
+// async function runFullPQBackgroundJob() {
+//   try {
+//     console.log("\n================ RUN PQ BACKGROUND JOB ====================");
+
+//     const token = await getOAuthToken();
+
+//     const updatedDateFrom = "2026-04-01T00:00:00Z";
+//     const updatedDateTo   = new Date().toISOString();
+
+//     // STEP 1 — Fetch ALL registered suppliers
+//     const supplierResponse = await fetchRegisteredSuppliers(token, updatedDateFrom, updatedDateTo);
+
+//     // ⭐ FIX: Ariba sometimes returns an array, sometimes { result: [] }
+//     const suppliers = Array.isArray(supplierResponse)
+//       ? supplierResponse
+//       : supplierResponse?.result || [];
+
+//     console.log(`Total suppliers fetched: ${suppliers.length}`);
+
+//     // STEP 2 — Hardcoded vendor
+//     const vendorId = "S11333046";
+//     const supplier = suppliers.find(s => s["SM Vendor ID"] === vendorId);
+
+//     if (!supplier) {
+//       console.error(`❌ Supplier ${vendorId} not found in Step 1 results`);
+//       return;
+//     }
+
+//    // STEP 3 — Fetch processes for this vendor
+// console.log(`\n===== FETCHING PROCESSES FOR ${vendorId} =====`);
+// const processData = await fetchSupplierProcesses(token, vendorId);
+// const processes = processData?.processes || [];
+
+// // ⭐ Log expiry date for visibility
+// let latestExpiry = 0;
+// for (const p of processes) {
+//   if (p.expiryDate && p.expiryDate > latestExpiry) {
+//     latestExpiry = p.expiryDate;
+//   }
+// }
+// const expiryDate = latestExpiry ? new Date(latestExpiry).toISOString() : "none";
+// console.log(`Expiry date for ${vendorId}: ${expiryDate}`);
+
+// // STEP 4 — Expiry logic
+// if (!shouldTriggerPQ(processes)) {
+//   console.log(`⏳ PQ still valid for ${vendorId} — SKIPPING PQ TRIGGER`);
+//   return;
+// }
+
+// console.log(`🔥 PQ expired or missing for ${vendorId} — WILL TRIGGER PQ`);
+
+
+//     // STEP 5 — Fetch workspaces
+//     console.log(`\n===== FETCHING WORKSPACES FOR ${vendorId} =====`);
+//     await fetchVendorWorkspaces(token, vendorId);
+
+//     // STEP 6 — Build combined payload
+//     console.log(`\n===== BUILDING PQ PAYLOAD FOR ${vendorId} =====`);
+//     const combined = await buildCombinedPayload(token, supplier);
+
+//     // STEP 7 — Trigger PQ
+//     const pqBody = buildPQTriggerBody(combined);
+//     await triggerPQ(pqBody, token);
+
+//     console.log(`\n===== PQ TRIGGERED SUCCESSFULLY FOR ${vendorId} =====`);
+
+//   } catch (err) {
+//     console.error("FULL PQ BACKGROUND JOB FAILED:", err);
+//   }
+// }
 
 
   // ============================================================
@@ -1128,22 +1249,38 @@ console.log(`🔥 PQ expired or missing for ${vendorId} — WILL TRIGGER PQ`);
   });
   */
 
-  // ============================================================
-// AUTO PQ JOB ON SERVER START
+//   // ============================================================
+// // AUTO PQ JOB ON SERVER START
+// // ============================================================
+// cds.on("served", async () => {
+//   try {
+//     console.log("\n\n================ AUTO PQ JOB ON SERVER START ================");
+
+//     await runFullPQBackgroundJob();
+
+//     console.log("\n===== AUTO PQ JOB COMPLETED SUCCESSFULLY =====");
+
+//   } catch (err) {
+//     console.error("AUTO PQ JOB FAILED:", err);
+//   }
+// });
 // ============================================================
+// SCHEDULED PQ JOB — RUNS IMMEDIATELY ON START, THEN EVERY 4 HOURS
+// ============================================================
+const FOUR_HOURS_MS = 4 * 60 * 60 * 1000;
+
 cds.on("served", async () => {
-  try {
-    console.log("\n\n================ AUTO PQ JOB ON SERVER START ================");
-
-    await runFullPQBackgroundJob();
-
-    console.log("\n===== AUTO PQ JOB COMPLETED SUCCESSFULLY =====");
-
-  } catch (err) {
-    console.error("AUTO PQ JOB FAILED:", err);
-  }
+  console.log(`\n⏰ PQ background job scheduled to run every 4 hours (no immediate run on start).`);
+  
+  setInterval(async () => {
+    try {
+      console.log("\n================ SCHEDULED PQ JOB FIRING ================");
+      await runFullPQBackgroundJob();
+    } catch (err) {
+      console.error("SCHEDULED PQ JOB FAILED:", err);
+    }
+  }, FOUR_HOURS_MS);
 });
-
 
 
 
