@@ -1161,41 +1161,55 @@ async function runFullPQBackgroundJob() {
       return req.error(400, "No valid rows found in CSV");
     }
 
-    let inserted = 0;
-    let updated  = 0;
+    // ⭐ STEP 1 — Fetch ALL existing mappings in ONE call, build a lookup map
+    const existingRows = await SELECT.from(Mappings);
+    const existingMap = {};
+    for (const r of existingRows) {
+      existingMap[r.commodityCode] = r;
+    }
+
+    // ⭐ STEP 2 — Split rows into "to insert" vs "to update" in memory (no DB calls)
+    const toInsert = [];
+    const toUpdate = [];
 
     for (const row of rows) {
-      const existing = await SELECT.one
-        .from(Mappings)
-        .where({ commodityCode: row.commodityCode });
-
-      if (existing) {
-        await UPDATE(Mappings)
-          .set({
-            commodityDesc   : row.commodityDesc,
-            productCategory : row.productCategory
-          })
-          .where({ commodityCode: row.commodityCode });
-        updated++;
+      if (existingMap[row.commodityCode]) {
+        toUpdate.push(row);
       } else {
-        await INSERT.into(Mappings).entries({
+        toInsert.push(row);
+      }
+    }
+
+    // ⭐ STEP 3 — Bulk insert all new rows in ONE call
+    if (toInsert.length > 0) {
+      await INSERT.into(Mappings).entries(
+        toInsert.map(row => ({
           ID              : cds.utils.uuid(),
           commodityCode   : row.commodityCode,
           commodityDesc   : row.commodityDesc,
           productCategory : row.productCategory
-        });
-        inserted++;
-      }
+        }))
+      );
     }
+
+    // ⭐ STEP 4 — Updates still need one call per row (CAP limitation),
+    // but this is now only the genuinely-changed subset, not every row
+    for (const row of toUpdate) {
+      await UPDATE(Mappings)
+        .set({
+          commodityDesc   : row.commodityDesc,
+          productCategory : row.productCategory
+        })
+        .where({ commodityCode: row.commodityCode });
+    }
+
+    const inserted = toInsert.length;
+    const updated  = toUpdate.length;
 
     console.log(`CSV Upload — inserted: ${inserted}, updated: ${updated}`);
 
-    // ⭐ After CSV upload is done, run the full PQ background job
-    await runFullPQBackgroundJob();
-
     return inserted + updated;
   });
-
   // ============================================================
   // ACTION: FetchRegisteredSuppliers (UI5 Trigger)
   // ============================================================
