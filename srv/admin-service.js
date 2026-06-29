@@ -995,16 +995,40 @@ async function processSupplier(token, supplier) {
 }
 
 // ============================================================
+// HELPER — Log a total job failure to PQLogs
+// ============================================================
+async function logPQRunFailure(failedStep, err) {
+  try {
+    const db     = await cds.connect.to("db");
+    const PQLogs = db.entities.PQLogs;
+
+    await INSERT.into(PQLogs).entries({
+      ID         : cds.utils.uuid(),
+      smVendorId : "ALL",
+      action     : "PQ_BACKGROUND_JOB",
+      status     : "FAILED",
+      details    : `Job failed at step: ${failedStep}. Error: ${err.message || String(err)}`,
+      createdAt  : new Date().toISOString()
+    });
+
+    console.log("📝 PQLogs failure row written successfully.");
+  } catch (logErr) {
+    console.error("⚠ Failed to write PQLogs failure row:", logErr);
+  }
+}
+
+// ============================================================
 // STEP 9 — FULL BACKGROUND JOB (ALL SUPPLIERS)
 // ============================================================
 async function runFullPQBackgroundJob() {
   console.log("\n================ RUN PQ BACKGROUND JOB ====================");
 
-  let token;
+ let token;
   try {
     token = await getOAuthToken();
   } catch (err) {
     console.error("FULL PQ BACKGROUND JOB FAILED at OAuth step:", err);
+    await logPQRunFailure("OAuth Token", err);
     return;
   }
 
@@ -1020,8 +1044,9 @@ async function runFullPQBackgroundJob() {
       ? supplierResponse
       : supplierResponse?.result || [];
 
-  } catch (err) {
+  }  catch (err) {
     console.error("FULL PQ BACKGROUND JOB FAILED at Supplier Fetch step:", err);
+    await logPQRunFailure("Supplier Fetch", err);
     return;
   }
 
@@ -1051,6 +1076,32 @@ async function runFullPQBackgroundJob() {
   if (failed > 0) {
     console.log("Failed suppliers:", results.filter(r => r.status === "failed"));
   }
+
+  // ⭐ Write one summary row to PQLogs so this run stays visible after logs scroll out
+  try {
+    const db     = await cds.connect.to("db");
+    const PQLogs = db.entities.PQLogs;
+
+    const failedDetails = results
+      .filter(r => r.status === "failed")
+      .map(r => `${r.vendorId}: ${r.error}`)
+      .join(" | ");
+
+    await INSERT.into(PQLogs).entries({
+      ID         : cds.utils.uuid(),
+      smVendorId : "ALL",
+      action     : "PQ_BACKGROUND_JOB",
+      status     : failed > 0 ? "COMPLETED_WITH_FAILURES" : "COMPLETED",
+      details    : `Total: ${results.length} | Triggered: ${triggered} | Skipped: ${skipped} | Failed: ${failed}` +
+                   (failedDetails ? ` || Failures: ${failedDetails}` : ""),
+      createdAt  : new Date().toISOString()
+    });
+
+    console.log("📝 PQLogs summary row written successfully.");
+  } catch (logErr) {
+    console.error("⚠ Failed to write PQLogs summary row:", logErr);
+  }
+
 }
   
 
@@ -1279,7 +1330,7 @@ async function runFullPQBackgroundJob() {
 //   }
 // });
 // ============================================================
-// SCHEDULED PQ JOB — RUNS IMMEDIATELY ON START, THEN EVERY 4 HOURS
+// SCHEDULED PQ JOB — RUNS EVERY 4 HOURS (NO IMMEDIATE RUN ON START)
 // ============================================================
 const FOUR_HOURS_MS = 4 * 60 * 60 * 1000;
 
