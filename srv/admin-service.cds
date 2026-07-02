@@ -31,4 +31,8 @@ service AdminService {
     regionId   : String
   ) returns String;
 
+  action TriggerSinglePQ(
+  ) returns String;
+
+  action RunPQJobScheduled() returns String;
 }

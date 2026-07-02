@@ -1277,6 +1277,74 @@ async function runFullPQBackgroundJob() {
     return JSON.stringify(suppliers);
   });
 
+
+  // ============================================================
+  // ACTION: TriggerSinglePQ — Manual single-supplier test trigger
+  // ⭐ Reuses the same processSupplier() logic as the 4-hour automation,
+  // so behavior is guaranteed identical and the schedule is never touched.
+  // ============================================================
+  this.on("TriggerSinglePQ", async (req) => {
+    // const { smVendorId } = req.data;
+
+    // if (!smVendorId || !smVendorId.trim()) {
+    //   return req.error(400, "smVendorId is required");
+    // }
+// ⭐ EDIT THIS LINE to test a different supplier — just change the ID below
+    const smVendorId = "S11389570";
+
+    console.log(`\n========== MANUAL SINGLE SUPPLIER TRIGGER: ${smVendorId} ==========`);
+
+    try {
+      const token = await getOAuthToken();
+
+      const updatedDateFrom = "2026-04-01T00:00:00Z";
+      const updatedDateTo   = new Date().toISOString();
+
+      const supplierResponse = await fetchRegisteredSuppliers(token, updatedDateFrom, updatedDateTo);
+      const suppliers = Array.isArray(supplierResponse)
+        ? supplierResponse
+        : supplierResponse?.result || [];
+
+      const supplier = suppliers.find(s => s["SM Vendor ID"] === smVendorId.trim());
+
+      if (!supplier) {
+        const msg = `Supplier ${smVendorId} not found in registered suppliers list`;
+        console.error(`❌ ${msg}`);
+        return JSON.stringify({ vendorId: smVendorId, status: "not_found", error: msg });
+      }
+
+      // ⭐ Reuses the exact same per-supplier logic as the 4-hour automation
+      const result = await processSupplier(token, supplier);
+
+      console.log(`========== MANUAL TRIGGER RESULT FOR ${smVendorId}: ${result.status} ==========\n`);
+
+      // ⭐ Log this manual run to PQLogs too, so it's visible in history
+      try {
+        const db     = await cds.connect.to("db");
+        const PQLogs = db.entities.PQLogs;
+
+        await INSERT.into(PQLogs).entries({
+          ID         : cds.utils.uuid(),
+          smVendorId : smVendorId,
+          action     : "MANUAL_SINGLE_TRIGGER",
+          status     : result.status === "triggered" ? "TRIGGERED"
+                      : result.status === "skipped"   ? "SKIPPED"
+                      : "FAILED",
+          details    : result.error || `Manual single-supplier trigger result: ${result.status}`,
+          createdAt  : new Date().toISOString()
+        });
+      } catch (logErr) {
+        console.error("⚠ Failed to write manual trigger PQLogs row:", logErr);
+      }
+
+      return JSON.stringify(result);
+
+    } catch (err) {
+      console.error(`MANUAL SINGLE SUPPLIER TRIGGER FAILED for ${smVendorId}:`, err);
+      return JSON.stringify({ vendorId: smVendorId, status: "failed", error: err.message || String(err) });
+    }
+  });
+
   // ============================================================
   // OPTIONAL DEBUG MODE — AUTO RUN ON SERVER START
   // ============================================================
@@ -1329,22 +1397,43 @@ async function runFullPQBackgroundJob() {
 //     console.error("AUTO PQ JOB FAILED:", err);
 //   }
 // });
+
+// ============================================================
+  // ACTION: RunPQJobScheduled — Called by BTP Job Scheduling Service
+  // ============================================================
+  this.on("RunPQJobScheduled", async (req) => {
+    console.log("\n================ JOB SCHEDULER TRIGGER RECEIVED ================");
+    try {
+      await runFullPQBackgroundJob();
+      return JSON.stringify({ status: "completed" });
+    } catch (err) {
+      console.error("JOB SCHEDULER TRIGGER FAILED:", err);
+      return JSON.stringify({ status: "failed", error: err.message });
+    }
+  });
 // ============================================================
 // SCHEDULED PQ JOB — RUNS EVERY 4 HOURS (NO IMMEDIATE RUN ON START)
 // ============================================================
 const FOUR_HOURS_MS = 4 * 60 * 60 * 1000;
 
-cds.on("served", async () => {
-  console.log(`\n⏰ PQ background job scheduled to run every 4 hours (no immediate run on start).`);
-  
-  setInterval(async () => {
-    try {
-      console.log("\n================ SCHEDULED PQ JOB FIRING ================");
-      await runFullPQBackgroundJob();
-    } catch (err) {
-      console.error("SCHEDULED PQ JOB FAILED:", err);
-    }
-  }, FOUR_HOURS_MS);
+cds.on("served", () => {
+  // ⭐ Check if BTP Job Scheduling Service is bound
+  const vcap = JSON.parse(process.env.VCAP_SERVICES || "{}");
+  const jobSchedulerBound = !!vcap["jobscheduler"];
+
+  if (jobSchedulerBound) {
+    console.log(`\n⏰ Job Scheduling Service detected — setInterval disabled. Waiting for scheduler triggers via RunPQJobScheduled action.`);
+  } else {
+    console.log(`\n⏰ Job Scheduling Service NOT detected — falling back to setInterval every 4 hours.`);
+    setInterval(async () => {
+      try {
+        console.log("\n================ SCHEDULED PQ JOB FIRING (setInterval fallback) ================");
+        await runFullPQBackgroundJob();
+      } catch (err) {
+        console.error("SCHEDULED PQ JOB FAILED:", err);
+      }
+    }, FOUR_HOURS_MS);
+  }
 });
 
 
